@@ -47,7 +47,7 @@ HomeopathyAI is a modern, AI-powered chat interface designed to assist certified
 
 1.  **Clone the repository.**
 2.  **Install dependencies:** `npm install`
-3.  **Create a `.env.local` file** in the root directory and add your Gemini API key:
+3.  **Create a `.env` file** in the root directory and add your Gemini API key. The name **must** start with `VITE_`.
     ```
     VITE_GEMINI_API_KEY=your_api_key_here
     ```
@@ -65,7 +65,7 @@ Deploying this application to Vercel is straightforward.
     -   Vercel will automatically detect that you're using **Vite** and will pre-fill the correct build settings. You can leave these as they are.
 4.  **Add Environment Variable (Crucial Step):**
     -   Expand the "Environment Variables" section.
-    -   Add a new variable with the **Name** `API_KEY`.
+    -   Add a new variable with the **Name** `VITE_GEMINI_API_KEY`. (Note the `VITE_` prefix is required).
     -   In the **Value** field, paste your secret Google Gemini API key.
     -   Vercel will keep this key secure.
 5.  **Deploy:**
@@ -85,6 +85,7 @@ The project is organized into a standard Vite + React structure:
 │   ├── index.css          # Main CSS file for Tailwind imports
 │   ├── index.tsx          # React application entry point
 │   └── types.ts           # TypeScript type definitions
+├── .env.example           # Example environment file
 ├── .gitignore
 ├── index.html             # Main HTML entry file
 ├── package.json           # Project dependencies and scripts

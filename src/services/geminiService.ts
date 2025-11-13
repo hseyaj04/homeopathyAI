@@ -1,12 +1,11 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
-// FIX: Use process.env.API_KEY as required by the coding guidelines.
+// FIX: Per coding guidelines, API key must be from process.env.API_KEY.
+// This also resolves the TypeScript error "Property 'env' does not exist on type 'ImportMeta'".
 const API_KEY = process.env.API_KEY;
 
 if (!API_KEY) {
-  // In a real app, you'd want to handle this more gracefully.
-  // For this example, we'll throw an error if the key is missing.
-  // FIX: Updated the error message to comply with coding guidelines.
+  // FIX: Updated error message to be more generic as per coding guidelines.
   throw new Error("API_KEY environment variable not set");
 }
 
@@ -74,7 +73,7 @@ export async function analyzePatientHistory(
     }
 
     const response = await ai.models.generateContent({
-      // FIX: Upgraded model to gemini-2.5-pro for complex reasoning and structured JSON output.
+      // Using gemini-2.5-pro for its superior ability with complex reasoning and structured JSON output.
       model: 'gemini-2.5-pro',
       contents: { parts },
       config: {
@@ -84,7 +83,6 @@ export async function analyzePatientHistory(
       }
     });
     
-    // The response.text should be a valid JSON string.
     return response.text;
   } catch (error) {
     console.error("Error analyzing patient history:", error);
