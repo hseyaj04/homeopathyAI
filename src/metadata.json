@@ -1,5 +1,0 @@
-{
-  "name": "HomeopathyAI",
-  "description": "A simple chat interface for certified doctors to analyze patient history using Gemini. Doctors can upload a patient's history, and the AI will suggest follow-up questions and potential remedies to assist in diagnosis and treatment planning.",
-  "requestFramePermissions": []
-}
