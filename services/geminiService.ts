@@ -1,6 +1,6 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = AIzaSyArLYEfCRixJ7uv-4UybfG38JgDx1mrCEc;
 
 if (!API_KEY) {
   // In a real app, you'd want to handle this more gracefully.
